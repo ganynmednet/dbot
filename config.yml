@@ -1,0 +1,9 @@
+
+
+dev:
+  telegram_token: "5560915949:AAH0_RQLE33a2j5b-n_6DQ5c79SLVTG680w"
+  database: "temp.db"
+
+prod:
+  telegram_token: "prod_token"
+  database: "temp.db"
