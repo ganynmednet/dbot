@@ -2,7 +2,9 @@
 
 
 
+# info
 
+https://www.sqlitetutorial.net/sqlite-python/
 
 # Telegram
 https://core.telegram.org/bots/api
