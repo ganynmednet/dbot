@@ -11,16 +11,18 @@ class Telegram:
         self.telegram_token = self.config["telegram_token"]
         self.URI = "https://api.telegram.org/bot{}/sendMessage".format(self.telegram_token)
 
-    def send_msg(self, msg, keyboard):
+    def send_msg(self, msg, keyboard=None):
 
         _data = {
             'chat_id': self.chat_id,
             'text': msg,
-            'parse_mode': 'markdown',
+            'parse_mode': 'Markdown',
+            "reply_markup": {}
         }
 
         if keyboard:
-            _data['inline_keyboard'] = keyboard
+            for item, value in keyboard.items():
+                _data["reply_markup"][item] = value
 
         print(json.dumps(_data, indent=3))
         result = requests.post(self.URI, json=_data)

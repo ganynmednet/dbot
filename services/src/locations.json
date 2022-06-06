@@ -1,0 +1,16 @@
+{
+  "inline_keyboard": [
+    [
+      {
+        "text": "Москва",
+        "callback_data": "LOCATION"
+      }
+    ],
+    [
+      {
+        "text": "Ялта",
+        "callback_data": "YALTA"
+      }
+    ]
+  ]
+}

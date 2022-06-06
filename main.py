@@ -98,6 +98,7 @@ class Bot:
         self.user = self.fetch_user_from_db(payload)
         self.orders = self.fetch_user_orders_from_db()
         self.pending_order = None
+        self.text = payload["message"]["text"]
 
     def fetch_user_from_db(self, payload):
         _sql = "SELECT * FROM users WHERE id = '{}'".format(self.id)
@@ -169,22 +170,51 @@ class Bot:
 
     def route_user(self):
         print("ROUTER")
-        # pass user message
-        if not self.pending_order:
-            self.msg_menu()
+        _msg = "Invalid command"
+        _keyboard = helpers.get_keyboard("main_menu")
+
+        Commands = dict(
+            Locations=dict(
+                msg="Location list:",
+                keyboard=self.get_locations_keyboards()
+            ),
+            Items=dict(
+                msg="Item list:",
+                keyboard=self.get_items_keyboards()
+            ),
+            Orderes=dict(
+                msg="Order list:",
+                keyboard=self.get_orders_keyboards()
+            ),
+        )
+
+        if self.text in Commands.keys():
+            _msg = Commands.get(self.text).get("msg")
+            _keyboard = Commands.get(self.text).get("keyboard")
+
         # if order exit => load Order() -> self.pending_order return remainder
-        # if no orders return menu
 
         # if create new order
         #   create an empty order
+        # _keyboard.update(helpers.get_keyboard("main_menu"))
 
-        pass
-
-    def msg_menu(self):
-        _msg = "Hey, check our item menu"
-        _keyboard = helpers.get_keyboard("main_menu")
         self.telegram.send_msg(_msg, _keyboard)
         return None
+
+    @staticmethod
+    def get_locations_keyboards():
+        # generate list of inline locations from database
+        return helpers.get_keyboard("locations")
+
+    @staticmethod
+    def get_items_keyboards():
+        # generate list of inline items by location from database
+        return helpers.get_keyboard("items")
+
+    @staticmethod
+    def get_orders_keyboards():
+        # generate list of inline orders from database
+        return helpers.get_keyboard("items")
 
 
 def lambda_handler(event, context):

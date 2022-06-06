@@ -1,0 +1,36 @@
+{
+  "version": "2.0",
+  "routeKey": "ANY /dbot",
+  "rawPath": "/default/dbot",
+  "rawQueryString": "",
+  "headers": {
+    "accept-encoding": "gzip, deflate",
+    "content-length": "273",
+    "content-type": "application/json",
+    "host": "vigtqx1vqj.execute-api.eu-west-2.amazonaws.com",
+    "x-amzn-trace-id": "Root=1-629ca79d-34b7761d4b8c2eb529cbeed6",
+    "x-forwarded-for": "91.108.6.154",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https"
+  },
+  "requestContext": {
+    "accountId": "079980807395",
+    "apiId": "vigtqx1vqj",
+    "domainName": "vigtqx1vqj.execute-api.eu-west-2.amazonaws.com",
+    "domainPrefix": "vigtqx1vqj",
+    "http": {
+      "method": "POST",
+      "path": "/default/dbot",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "91.108.6.154",
+      "userAgent": ""
+    },
+    "requestId": "TP8gkiUcLPEEPTg=",
+    "routeKey": "ANY /dbot",
+    "stage": "default",
+    "time": "05/Jun/2022:12:54:53 +0000",
+    "timeEpoch": 1654433693072
+  },
+  "body": "{\"update_id\":740997221,\n\"message\":{\"message_id\":7,\"from\":{\"id\":1022845274,\"is_bot\":false,\"first_name\":\"SDK\",\"username\":\"thisisme679\",\"language_code\":\"en\"},\"chat\":{\"id\":1022845274,\"first_name\":\"SDK\",\"username\":\"thisisme679\",\"type\":\"private\"},\"date\":1654433693,\"text\":\"Items\"}}",
+  "isBase64Encoded": false
+}

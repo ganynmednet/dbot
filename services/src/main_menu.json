@@ -1,20 +1,26 @@
-[
-  [
-    {
-      "text": "Locations",
-      "callback_data": "account menu"
-    }
+{
+  "keyboard": [
+    [
+      {
+        "text": "Locations"
+      },
+      {
+        "text": "Items"
+      }
+    ],
+    [
+      {
+        "text": "Orders"
+      }
+    ],
+    [
+      {
+        "text": "Profile"
+      },
+      {
+        "text": "Support"
+      }
+    ]
   ],
-  [
-    {
-      "text": "Items ⚡",
-      "callback_data": "handlers menu"
-    }
-  ],
-  [
-    {
-      "text": "Support ",
-      "callback_data": "txn menu"
-    }
-  ]
-]
+  "resize_keyboard": true
+}

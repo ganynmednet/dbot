@@ -1,0 +1,16 @@
+{
+  "inline_keyboard": [
+    [
+      {
+        "text": "Товар 1",
+        "callback_data": "ITEM_1"
+      }
+    ],
+    [
+      {
+        "text": "Товар 2",
+        "callback_data": "ITEM_2"
+      }
+    ]
+  ]
+}
